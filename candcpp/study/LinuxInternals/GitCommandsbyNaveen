@@ -1,0 +1,49 @@
+***********************************************************************************
+Github Steps:
+Create New Repository with RepoName
+https://github.com/Rajanarender/RepoName.git //copy this URl
+go to linux terminal
+git clone ...RepoName
+cd RepoName //traverse into that new repo, V.V.Imp
+git checkout -b branchname //creating new branch and traverse into that
+cp -R ../localdirectory .
+git add localdirectory
+git commit -m "comments"
+git push origin branchname
+Enter Username:Rajanarender
+Password:
+
+Now goto website
+=>Your Profile to see your new Repository
+
+------------------------------------------------------------------------
+How to download/clone this Repository to your local system??
+Go to your profile in website
+Select the Repository
+Click the "Clone or Download"[Green colored] button
+Select and copy the https URL
+Now open your linux terminal
+enter the command for cloning/download the repository to local: git clone https://github.com/Rajanarender/Selfstudy.git
+(Or) Directly download the ZIP file to yout local
+
+********************************************************************************************************
+git pull origin branchname [This is used for getting the modified file in git website to your already created repository]
+
+If we want to update modified/New files of your local to git website,then follow this steps
+=>git add filename
+=>git status [to check modified/new files]
+=>git commit -m "Message explaining the file changes"
+=>git branch[This will display the current working branch]
+=>git push origin branchname[ Use tab to display all the branches available]
+Enter Username:Rajanarender
+Password:
+********************************************************************************************************
+
+ 
+
+
+
+
+
+
+

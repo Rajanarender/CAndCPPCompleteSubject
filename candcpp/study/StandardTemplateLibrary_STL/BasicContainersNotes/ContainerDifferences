@@ -1,0 +1,169 @@
+*********************************************************************
+Difference b/w Sequential and Associative containers
+Sequential:
+Container classes like vector,deque,list,forward_list
+Contiguous memory - vector(since array is also contiguous)
+Non-contiguous memory - deque,list,forward_list
+push and pop operations along with insert,erase API's
+
+Associative:
+Container classes like set,multiset,unordered_set(C++11),map,multimap,unordered_map(C++11)
+Non-contiguous memory - set,multiset,unordered_set(C++11),map,multimap,unordered_map(C++11)
+No push and pop operations,use insert,erase API's only 
+
+*********************************************************************
+Difference b/w array and vector
+array:
+x[3]={2,4,6};
+=>size of array is fixed
+=>insertion,deletion operations is costly
+=>Array is not a class
+=>contiguous memory
+=>Elements access is done using index([]) only
+
+vector:
+vector<int>v;
+=>vector is called as dynamic array with variable size due to capacity() API
+=>insertion,deletion operations is easier using insert,erase,push_back,pop_back API's
+=>vector is a class, using this class member functions we can do all manipulations on vector
+=>contiguous memory
+=>Elements access is done using index([]),member functions(at(),back(),front())
+*********************************************************************
+
+Difference b/w vector and deque
+vector:
+=>size is variable
+=>contiguous memory
+=>push and pop operations -only backward(push_back(),pop_back()) ,insert(),erase()
+=>Elements access is done -using index([]),member functions(at(),back(),front())
+
+deque:[double ended Queue]
+=>size is variable
+=>Non-contiguous memory
+=>push and pop operations -both forward(push_front(),pop_front()) and backward(push_back(),pop_back()),insert(),erase()
+=>Elements access is done -using index([]),member functions(at(),back(),front())
+
+NOTE:deque is same as vector but having push/pop at both ends with non-contiguous memory
+************************************************************************************
+
+Difference b/w vector and list[double linked list],forward_list[single linked list]
+vector:
+=>size is variable
+=>contiguous memory
+=>push and pop operations -only backward(push_back(),pop_back()) ,insert(),erase()
+=>Elements access is done -using index([]),member functions(at(),back(),front())
+
+list: doubly linked list
+=>size is variable
+=>Non-contiguous memory
+=>push and pop operations -forward(push_front(),pop_front()) and backward(push_back(),pop_back()) ,insert(),erase()
+=>Elements access is done -using member functions front(),back() and not index
+
+forward_list: singly linked list
+=>size is variable
+=>Non-contiguous memory
+=>push and pop operations -forward(push_front(),pop_front()) ,insert(),erase()
+=>Elements access is done -using front() and not index
+************************************************************************************
+
+Difference b/w vector and set,multiset
+vector:
+=>size is variable
+=>contiguous memory
+=>sequential container
+=>vector elements are not arranged in any particular order
+=>push and pop operations -only backward(push_back(),pop_back()),insert(),erase()
+=>Elements access is done -using index([]),member functions(at(),back(),front())
+
+set:
+=>size is variable
+=>Non-contiguous memory
+=>Associative container
+=>set has its elements arranged in ASC order by default
+=>set doesnot allow Duplicate elements
+=>Push and pop operations -No, Use only insert(),erase()
+=>Elements access is done -using Iterator(*it) only
+
+multiset:
+=>same as set but allows duplicate elements 
+************************************************************************************
+
+Difference b/w vector and map,multimap
+vector:
+=>size is variable
+=>contiguous memory
+=>sequential container
+=>push and pop operations can be done only backward
+=>Elements access is done -using index([]),member functions(at(),back(),front())
+
+map:
+=>size is variable
+=>Non-contiguous memory
+=>Associative container having 2 elements as KEY-VALUE pair
+=>map has its KEY elements arranged in ASC order by default
+=>map doesnot allow Duplicate KEY elements,but allows duplicate values
+=>Push and pop operations -No
+=>insert using m.insert(make_pair(,)),m.insert(pair<key,value>()) 
+=>Elements access is done -using index([]),member function(at()) -c++11
+
+multimap:
+=>same as map but allows duplicate KEY-VALUE pairs
+=>Elements access cannot use index(V.V.Imp)
+
+************************************************************************************
+
+Difference b/w set and map
+set:
+=>size is variable
+=>Non-contiguous memory
+=>Associative container
+=>set has its elements arranged in ASC order by default
+=>set doesnot allow Duplicate elements
+=>Push and pop operations -No, Use only insert(),erase()
+=>Elements access is done -using Iterator(*it) only
+
+map:
+=>size is variable
+=>Non-contiguous memory
+=>Associative container having 2 elements as KEY-VALUE pair
+=>map has its KEY elements arranged in ASC order by default
+=>map doesnot allow Duplicate KEY elements,but allows duplicate values
+=>Push and pop operations -No
+=>insert using m.insert(make_pair(,)),m.insert(pair<key,value>())
+=>key,value pairs are accessed using iterator(it->first,it->second)
+=>Elements access is done -using index([]),member function(at()) -c++11
+
+************************************************************************************
+Differenece b/w set,multiset,unordered_set(C++11)
+
+set:
+=>Elements - unique and Sorted
+=>Elements are accessed using *it
+
+multiset:
+=>Elements - duplicate and Sorted
+=>Elements are accessed using *it
+
+unordered_set: //same as set but unsorted elements
+=>Elements - unique and Unsorted
+=>Elements are accessed using *it
+
+************************************************************************************
+Differenece b/w map,multimap,unordered_map(C++11)
+
+map:
+=>Keys - unique and Sorted
+  Values - duplicate
+=>Values are accessed using index m[key]
+
+multimap:
+=>Keys - duplicate and Sorted
+  Values - duplicate
+=>Values CANNOT be accessed using index m[key]
+
+unordered_map: //same as map but unsorted keys
+=>Keys - unique and unsorted
+  Values - duplicate
+=>Values are accessed using index m[key]
+
+************************************************************************************

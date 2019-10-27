@@ -1,0 +1,152 @@
+1. A process executes the following code:
+
+for (i = 0; i < n; i ++) fork();
+
+Ans: B -The total number of child processes created is 2 pow(n) - 1;
+
+
+2. An operating system uses shortest remaining time first (SRT) process scheduling algorithm. Consider the arrival times and execute times for the following parameters:
+
+
+Process 	Execution time 	Arrival time
+P1 		20 		0
+P2 		25 		15
+P3		10 		30
+P4		15		45
+
+What is the total waiting time for process P2 ??  15
+
+Ans:B
+
+3. Consider the following statements with respect to user-level threads and kernel supported threads.
+i> context switch is faster with kernel supported threads.
+ii> for user level threads, a system call can block the entire process.
+iii> kernel supported threads can be scheduled independently.
+iv> User level threads are transparent to the kernel.
+
+A: C) -i&iii
+
+
+4. Consider three processes (process id 0, 1, 2 respectively) with compute brust time brusts 2, 4 and 8 time units. All processes arrive with time zero.Consider the longest remaining time first (LRT) scheduled algorithm. In LRTF ties are broken by giving priority to the process with 
+the lowest process id. The average turn around time .
+
+i> 13 units
+ii> 14 units
+iii> 15 units
+iv> 16 units
+
+A: iii)
+
+5. The enter_cs() and leave_cs() functions to implement critical section of a process are realized using test-and-set instructions as follows:
+
+void enter_cs(X)
+{
+	while test_and_set(X);
+}
+
+
+void leave_cs(x)
+{
+	x = 0;
+}
+
+In the above solution , X is a memory location associated with the CS and is initialized to 0.Now consider the following statements:
+I. The above solution to CS problem is deadlock-free.
+II. The solution is starvation free.
+III. The processes enter CS in FIFO order.
+IV. More than one process can enter CS at the same time.
+
+
+Which of the above statements is TRUE??
+
+A) I only.
+B) I and II
+C) II and III
+D) IV only
+
+Ans: I only
+
+
+6) Let the time taken to switch between user and kernel modes of execution be t1 while the time taken to switch between two processes be t2.
+Which of the following is TRUE ??
+
+A) t1 > t2
+B) t1 = t2
+c) t1 < t2
+D) Nothing can said about the relation between t1 and t2.
+
+
+A: A)
+
+
+7) Consider the methods used by processes P1 and P2 for accessing their critical sections whenever needed, as given below.The initial values of shared boolean variables S1 and S2 are randomly assigned.
+
+
+Method used by P1
+
+while (s1 == s2):
+critical section
+s1 = s2;
+
+
+Method used by P2
+
+while (s1 != s2):
+critical section
+s2 = not (s1);
+
+
+Which one of the following statements describes the properties achieved ??
+A) Mutual exclusion but not progress
+B) Progress but not mutual exclusion
+c) Neither mutual exclusion not progress
+D) Both mutual exclusion and progress.
+
+Ans:A
+
+8) A thread is usually defined as a light weight process because an operating system maintains smaller data structures  for a thread than for 
+a process. In relation to this.which of the following is TRUE??
+
+A) On per-thread basis,OS maintains only CPU register states.
+B) The OS does not maintains a separate stack for each thread.
+c) on per-thread basis,OS does not maintains virtual memory state.
+d) on per-thread basis, OS maintains only scheduling and maintaining information
+
+
+A: d)
+
+9) consider the 3 processes, P1, P2 and P3 shows in the table
+
+process 	Arrival time 	Time wait required
+P1		0		5
+P2		1		7
+P3		3		4
+
+
+The completion order of the 3 processes under the policies FCFS and round robin scheduling with CPS quantum of 2 time units are
+
+A: c)
+
+10) same as 3 rd.
+Ans:c)
+
+
+C questions:
+1.C 
+2.D 
+3.B 
+4.B 
+5.C 
+6.A 
+7.B 
+8.C
+9.B 
+10.C
+
+
+
+
+
+
+
+

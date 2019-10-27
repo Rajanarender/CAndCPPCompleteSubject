@@ -1,0 +1,5 @@
+Deadlock[NHMC]:
+No Pre-emption condition
+Hold and Wait condition
+Mutual Exclusion[mutex] condition //Synchronization Technique
+Circular Wait condition

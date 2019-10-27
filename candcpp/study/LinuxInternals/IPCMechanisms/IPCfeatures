@@ -1,0 +1,68 @@
+IPC:Inter Process Communication
+Used to communicate b/w 2 different/same processes
+IPC types: 5
+1)Shared Memory    [#include<sys/shm.h>]
+2)Message Queue    [#include<sys/msg.h>]
+3)Pipe             [#include<unistd.h>]
+4)Named Pipe(FIFO) [#include<unistd.h>]
+5)Signals
+
+Characteristics:CDS
+
+Shared Memory,TCP/IP:
+Connection oriented[acknowledgement is there]
+Full Duplex[2way communication]
+Stream Oriented
+
+Message Queue,UDP:
+Not Connection oriented[No acknowledgement]
+Full Duplex[2way communication]
+Message Oriented
+
+Pipe,Named Pipe:
+Not Connection oriented[No acknowledgement]
+Half Duplex[1way communication]
+Stream Oriented
+
+
+API's:
+Shared Memory:331
+int shmid=shmget(key,1024,0666|IPC_CREAT);
+char *msg =(char*)shmat(shmid,0,int flag); //Extra argument is flag
+
+int shmid=shmget(key,1024,0666|IPC_CREAT);
+shmdat(msg);
+
+Message Queue:245
+struct msg
+{
+char msgtext[10];
+int msgid;
+};
+
+int msgid=msgget(key,0666|IPC_CREAT);
+msgsnd(msgid,msgstructobj,sizeof(msgstructobj,int flag)); //Extra argument is flag
+
+msgid=msgget(key,0666|IPC_CREAT);
+msgrcv(msgid,msgstructobj,sizeof(msgstructobj,msgstructobj.id,int flag)); //Extra argument is flag
+
+msgctl(msgid,0666|IPC_RMID);
+
+Pipe:Relevant processes[only parent-child processes]
+int fd[2];
+pipe(fd);
+char msg[10]="Global";
+if(fork() > 0)//parent process
+{
+write(fd[1],msg,sizeof(msg));
+}
+
+if(fork() == 0)//child process
+{
+read(fd[0],msg,sizeof(msg));
+}
+
+Named Pipe:
+int fd = mkfifo("/sys/FIFO",'w');
+write(fd,);
+

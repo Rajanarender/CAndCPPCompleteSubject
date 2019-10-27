@@ -1,0 +1,20 @@
+Difference b/w size() and capacity() in vector
+Difference b/w reserve() and capacity() in vector
+Difference b/w Sequence and Associative containers
+
+Difference b/w Array and vector
+Difference b/w Array and deque
+Difference b/w Array and list
+Difference b/w vector and deque
+Difference b/w vector and list
+Difference b/w deque and list
+Difference b/w forward_list and list
+Difference b/w set and vector
+Difference b/w set and multiset
+Difference b/w set and unordered_set
+Difference b/w set and map
+Difference b/w map and multimap
+Difference b/w map and unordered_map
+What is iterator?
+Ans:iterator is an object pointing to container elements,used for traversing b/w the elements of container
+

@@ -1,0 +1,29 @@
+
+NULBFOCFDDDSMART
+
+N -> nullptr
+U -> Uniform initialization
+L -> Lambda Expressions [](){};
+B -> bind (#include<functional>)
+F -> final
+O -> Override
+C -> constexpr
+F -> functor
+D -> decltype()
+D -> default
+D -> delete
+S -> Smart ptrs (#include<memory>)
+M -> Move constructor,Move assignment operator
+A -> auto
+R -> Range Based for loops for(auto i : x)
+T -> Tuple
+
+emplace_back()
+emplace(x.begin(),x.end(),x);
+
+=========================================
+Not part of C++11
+explicit Parameterised constructor
+assert (#include<cassert>) 
+mutable
+=========================================

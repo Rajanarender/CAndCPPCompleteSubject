@@ -1,0 +1,191 @@
+#include<stdio.h>
+
+struct node
+{
+	int data;
+	struct node *next;
+};
+
+void insertAtBegin(struct node *headref,int newdata)
+{
+	struct node *newnode=(struct node*)sizeof(struct node);
+	newnode->data = newdata;
+	newnode->next=headref;
+	headref=newnode;
+}
+
+void insertAfterMiddle(struct node *headref)
+{
+	struct node *fast=headref;
+	struct node *slow= headref;
+	while(fast !=NULL && fast->next !=NULL)
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+	}
+
+	struct node *newnode=(struct node*)sizeof(struct node);
+	newnode->data = newdata;
+	newnode->next =slow->next;
+	slow->next=newnode;
+}
+
+void insertAfterNthPosition(struct node *headref)
+{
+	struct node *temp = headref;
+	int count =1;//since temp points to head node
+	while(temp->next != NULL&&count < N)
+	{
+		count++;
+		temp = temp->next;
+	}
+	struct node *newnode=(struct node*)sizeof(struct node);
+	newnode->data = newdata;
+	newnode->next = temp->next;
+	temp->next = newnode;
+}
+
+void insertAfterEnd(struct node *headref)
+{
+        struct node *temp = headref;
+        while(temp != NULL)
+        {
+          temp = temp->next;
+        }
+	struct node *newnode=(struct node*)sizeof(struct node);
+	newnode->data = newdata;
+        newnode->next = NULL;//Since it is the last node
+        temp->next = newnode;
+}
+
+void FindMiddleNode2ptrs(struct node *headref)
+{
+	struct node *fast=headref;
+	struct node *slow=headref;
+	while(fast !=NULL && fast->next !=NULL) //Floyd's Cycle Detection Algorithm
+	{
+		fast=fast->next->next;
+		slow= slow->next;
+	}
+	printf("%d",slow->data); //MiddleNode
+}
+
+void FindMiddleNode2ptrs(struct node *headref)
+{
+
+}
+
+void FindCircularLoop(struct node *headref)
+{
+	struct node *fast=headref;
+	struct node *slow=headref;
+	while(fast !=NULL && fast->next !=NULL) //Floyd's Cycle Detection Algorithm 
+	{
+		fast=fast->next->next;
+		slow= slow->next;
+		if(fast == slow)
+			printf("Linked List is Circular,It is having Loop");
+	}
+}
+
+void swap(int *x,int *y)
+{
+	int temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
+void PairwiseSwap(struct node *headref)
+{
+	struct node *temp= headref;
+	while(temp !=NULL && temp->next !=NULL)
+	{
+		swap(&(temp->data),&(temp->next->data));
+		temp = temp->next->next;
+	}
+}
+
+void DupNodesCount&RemovalSLL(struct node *headref)
+{
+	struct node *temp=headref;
+	struct node *dup=NULL;
+	int count=0;
+	while(temp !=NULL && temp->next !=NULL)
+	{
+		if(temp->data == temp->next->data) //If data matched,Delete the duplicate
+		{
+			dup = temp->next;
+			temp->next = dup=next; //Form the link before deleting the node
+			free(dup);
+			count++;
+		}
+		else // If node data is not matched then keep traversing
+			temp=temp->next;
+	}
+	printf("%d",count); //Counts the no. of duplicate nodes 
+}
+
+
+void DupNodesCount&RemovalUnSLL(struct node *headref)
+{
+	struct node *temp1=headref;
+	struct node *temp2=NULL;
+	int count=0;
+	while(temp1 != NULL && temp1->next !=NULL)
+	{
+		temp2=temp1;
+		while(temp2->next!=NULL)
+		{
+			if(temp1->data == temp2->next->data)
+			{
+				dup = temp2->next;
+				temp2->next = dup->next;
+				free(dup);
+			}
+			else
+				temp2=temp2->next;
+		}
+		temp1=temp1->next;
+	}
+	printf("%d",count);
+}
+
+void DeleteAltNodes(struct node *headref)
+{
+	struct node *dup=NULL;
+	while(temp != NULL && temp->next != NULL)
+	{
+		dup=temp->next;
+		temp->next=dup->next;
+		free(dup);
+		temp = temp->next; //For traversing 
+	}
+}  
+
+void DeleteSinglePtrtoNode(struct node *headref)
+{
+	//We have the copy the data and link of next node to ptr pointing Node
+	ptr->next=ptr->next->next;
+	ptr->data=ptr->next->data;
+	free(ptr->next);
+}
+
+Deletion of all positions
+Delete alt nodes
+Rotate by K nodes
+Reverse by Iterative,Recursive
+Intersection/Merge
+
+int main()
+{
+	struct node *head = NULL;
+	insertAtBegin(head,5);
+	insertAtBegin(head,6);
+	while(head->next)
+	{
+		printf("%d",head->data);
+		head = head->next;
+	}
+}
+
+

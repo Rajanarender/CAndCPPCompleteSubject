@@ -1,0 +1,27 @@
+macro:(#define )
+These are expanded at Preprocessing time i.e., before compilation
+These is defined for a variable,block of data
+This does not do data type checking parameters //Automatic type conversion
+Arithmetic operations may not give exact results(++,--)
+
+inline:( inline int func() )
+These are expanded at Compilation time
+This is defined only for fuctions
+This does data type checking of the parameters
+Arithmetic operations give exact results //Checks conversion
+NOTE:inline can be used only for small block of data n not for bigger blocks
+
+
+inline Vs func
+
+func:
+When a function is called at certain address,It searches for declaration 1st and maps to exact definition 
+Now the arguments of the func are pushed to the definition,
+After performing the task,they return,get popped out 
+Now the code control gets back to caller LOC
+This Stack Push and Pop takes more time to Execute
+
+inline func:
+Here the entire function definition gets copied at caller LOC at compilation time
+There is no address mapping,Stack operations here,so Execution time is faster
+

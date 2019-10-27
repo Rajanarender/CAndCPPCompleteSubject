@@ -1,0 +1,26 @@
+
+gdb displays the stack frame summary [Segmentation fault occurred func to the initiater func1,func2,func3,so on...]
+
+gdb for threads:
+
+(gdb) info threads
+  3 process 35 thread 27  0x34e5 in sigpause ()
+  2 process 35 thread 23  0x34e5 in sigpause ()
+* 1 process 35 thread 13  main (argc=1, argv=0x7ffffff8)
+    at threadtest.c:68
+
+(gdb) thread 1  //Here 1 is the threadnumber
+
+Explanation of info threads: 
+Display a summary of all threads currently in your program. GDB displays for each thread (in this order):
+
+    the thread number assigned by GDB
+    the target system's thread identifier (systag)
+    the current stack frame summary for that thread
+
+An asterisk `*' to the left of the GDB thread number indicates the current thread. For example,
+
+gdb for process:
+
+(gdb) attach pid  //This attaches gdb to a running process with pid and displays the stack frame summary
+(gdb) detach

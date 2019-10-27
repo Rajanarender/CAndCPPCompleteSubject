@@ -1,0 +1,28 @@
+Pending topics:
+itoa
+strstr
+upperbound,lowerbound
+shrinkttoit
+threads for loading vector,accessing vector
+All Api code for smart ptrs
+Ask anvesh for storage classes,IPCs,Segmentation fault reasons,dangling ptr,other ptrs
+UML diagrams
+BST insertion,deletion
+template class,function
+Shallow,Deep copy for ptr
+Implement Stack,Queue operations using linked list
+Implement stack,Queue using linked list
+Recursive reverse of SLL
+
+class X
+{
+friend void func();
+friend class Y;
+}
+
+template<class T>
+template<typename T>
+func<int>(10);
+X<int>obj(20);
+
+vptr,vtable

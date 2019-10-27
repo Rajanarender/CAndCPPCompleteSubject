@@ -1,0 +1,78 @@
+
+C++ 
+Class,Object
+APIE,namespace,name mangling(overloading)
+Hashing,STL
+
+swap 2 strings
+swap characters in a string
+swap 2 no's without using 3rd variable[+,^(XOR)]
+Reverse a string
+Palindrome
+strcmp
+recursive,iterative for str operations
+atoi,pow,fact,fibonacci,armstrong number
+strlen,strcpy,strcat,strcmp,strrev,strstr,strchr
+Handle all corner cases when i/p string is NULL
+malloc,free, ,delete for 2d array
+matrix multiplication
+How to find duplicate,unique elements in integer array,char array,Single linked list [Use Hashing(unordered_map)]
+Take 2 strings ,print the unique characters of 1st string those not present in 2nd string
+
+A class having param constuctor,Can we call Default constructor ?? //We have to define our own default constructor 
+
+class Base
+{
+void func();
+~Base()
+{
+cout<<"In Base";
+}
+};
+
+class Derived: public Base
+{
+void func();
+~Derived()
+{
+cout<<"In Derived";
+}
+}
+
+int main()
+{
+Base *ptr= new Derived(); //new is resolved only at RUN time,And Compiler doesnt have the visibility
+                          //So points to its class type
+ptr->func(); //Y Derived func is not called?
+delete ptr; //Y derived destructor is not called?
+} 
+
+Why smart ptrs came into picture?
+What is unique_ptr? Can we copy or assign one unique ptr to other?
+If we want to transfer the ownership of unique_ptr, What we have to do?
+Can we have unique_ptr has argument and return type?
+unique_ptr<>p = func();
+func(p); // void func(unique_ptr<>x); //Is this correct
+
+What is auto_ptr?Why is it deprecated?Is the ownership getting transferred due to copy,assign?
+What is shared_ptr?How to get the reference count(use_count)? 
+When is reference count is Zero, shared_ptr will be destroyed
+What is the problem with shared_ptr?cyclic Reference,How to resolve it?
+
+What is weak_ptr?Can we use this to fix shared_ptr cyclic reference?
+shared_ptr<>p1= make_shared<>();
+shared_ptr<>p2=p1;
+cout<<p1.use_count(); //2
+weak_ptr<>p3=p1; //weak ptr doesnt add to reference count
+cout<<p1.use_count();//2
+
+How to check whether there are duplicate elements in a Array using single loop? temp[a[i]]++
+How to check whether there are duplicate elements in a Array using Hashing(unordered_map)?
+How to check whether there are duplicate elements in a Array using Boolean flags?
+
+
+
+
+
+
+
